@@ -14,6 +14,7 @@ let print_vec ch v =
   fprintf ch "(%.3f,%.3f,%.3f)" v.dx v.dy v.dz
 
 let _ = printf "scalaire %a . %a = %.2f\n" print_vec v1 print_vec v2 (scalaire v1 v2)
+let _ = printf "vectoriel %a ^ %a = %a\n" print_vec v1 print_vec v2 print_vec (vectoriel v1 v2)
 let _ = printf "det( %a, %a ) = %.2f\n" print_vec v1 print_vec v2 (determinant2 v1 v2)
 let _ = printf "det( %a, %a, %a ) = %.2f\n" print_vec v1 print_vec v2 print_vec v3 (determinant3 v1 v2 v3)
-let _ = printf "vectoriel %a ^ %a = %a\n" print_vec v1 print_vec v2 print_vec (vectoriel v1 v2)
+let _ = printf "barycentre( %a, %a ) = %a\n" print_point p1 print_point p2 print_point (barycentre2 (1.0, p1) (2.0, p2))
